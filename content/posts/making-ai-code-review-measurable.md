@@ -16,9 +16,9 @@ Then I read a [thread by Intercom](https://x.com/gregolsent/status/2039788736569
 
 <i>Disclaimer: This post is not an endorsement. This was just an experiment inspired by the thread and my own interpretation of how a system like that might work. It was also only possible because OpenAI gave us a three-month trial. During the process, I burned through a few billion tokens. It was a great learning experience, but definitely not cheap.</i>
 
-## 1. Yet another code review tool
+## 1. Why build this myself?
 
-There are a lot of code review tools out there. I'm sure some of them are great, even better than what I'm trying to build. But one thing that I'm trying to do here is to be able to run reviews with my existing ChatGPT Codex subscription (either personal or enterprise plan). I really, really don't want to pay for yet another subscription.
+There are already a lot of code review tools out there. I'm sure some of them are great, and some maybe better than what I built. But I wanted something that could run inside my existing workflow and use my existing ChatGPT Codex subscription, whether personal or enterprise. I really, really did not want another subscription.
 
 ## 2. Coding agent
 
