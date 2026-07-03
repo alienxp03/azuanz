@@ -1,0 +1,11 @@
+[tools]
+go = "1.26.4"
+hugo-extended = "0.163.3"
+
+[tasks.dev]
+description = "Run the Hugo development server locally"
+run = "hugo server --bind 127.0.0.1 --baseURL http://localhost:1313 --buildDrafts --disableFastRender"
+
+[tasks.build]
+description = "Build the site for production"
+run = "hugo --gc --minify"

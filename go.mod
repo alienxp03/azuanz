@@ -1,5 +1,5 @@
 module github.com/alienxp03/azuanz
 
-go 1.23.3
+go 1.26.4
 
-require github.com/adityatelange/hugo-PaperMod v0.0.0-20250524045829-5a4651783fa9 // indirect
+require github.com/adityatelange/hugo-PaperMod v0.0.0-20260510052646-154d006e0182 // indirect

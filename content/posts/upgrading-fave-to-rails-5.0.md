@@ -11,7 +11,6 @@ hidemeta: false
 comments: false
 description: "Upgrading Fave to Rails 5.0"
 # canonicalURL: "https://canonical.url/to/page"
-disableHLJS: true # to disable highlightjs
 disableShare: false
 disableHLJS: false
 hideSummary: false

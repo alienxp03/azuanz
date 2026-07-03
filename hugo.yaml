@@ -1,5 +1,5 @@
 baseURL: https://azuanz.com/
-languageCode: en-us
+locale: en-US
 title: azuan
 
 enableRobotsTXT: true
@@ -12,6 +12,11 @@ googleAnalytics: "G-F8TV8Y6R22"
 minify:
   disableXML: true
   minifyOutput: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
