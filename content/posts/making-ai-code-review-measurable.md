@@ -1,5 +1,5 @@
 ---
-title: "Building an AI Code Review Evaluation Platform"
+title: "Making AI Code Review Measurable"
 date: 2026-07-02T00:00:00+08:00
 tags: ["ai", "code review", "engineering"]
 author: "Azuan"
@@ -11,7 +11,7 @@ Code review has always been one of the bottlenecks for software engineers. At [l
 Then I read a [thread by Intercom](https://x.com/gregolsent/status/2039788736569885114) on how they use AI not just for code review, but also to approve it. Sounds risky, but also very interesting.
 
 <p align="center">
-  <img src="/building-an-ai-code-review-evaluation-platform/intercom-code-review.png" alt="Intercom code review" width="480">
+  <img src="/making-ai-code-review-measurable/intercom-code-review.png" alt="Intercom code review" width="480">
 </p>
 
 <i>Disclaimer: This post is not an endorsement. This was just an experiment inspired by the thread and my own interpretation of how a system like that might work. It was also only possible because OpenAI gave us a three-month trial. During the process, I burned through a few billion tokens. It was a great learning experience, but definitely not cheap.</i>
@@ -27,6 +27,8 @@ There are a lot of code review tools out there. I'm sure some of them are great,
 I decided to use `codex exec` to run the code review. Using only the `git diff` would be a lot faster and cheaper, but I personally do not like that approach. Context matters a lot.
 
 When I review a pull request, I rarely look at the diff in isolation. I open related files, check how the surrounding code works, look for similar patterns, and think about how the change could break existing behaviour. I wanted the AI reviewer to be able to do the same.
+
+Another reason I liked this approach is that it fits into my existing workflow. The agent can use the same skills, MCP servers, commands, and project context that I already use day to day. That makes the review less like a generic external tool and more like an extension of how I already work.
 
 The basic flow looks like this:
 
@@ -55,7 +57,7 @@ Example output:
 With this approach, Codex can inspect relevant files and gather context before performing the review. Because the output is structured, I can also build a simple web interface around the system.
 
 <p align="center">
-  <img src="/building-an-ai-code-review-evaluation-platform/codex-usage.png" alt="codex-usage" width="800">
+  <img src="/making-ai-code-review-measurable/codex-usage.png" alt="codex-usage" width="800">
 </p>
 
 
@@ -86,7 +88,7 @@ Some examples:
   - In the mock review, I want this PR to be rejected. Thanks to my team lead, who asked about this scenario.
 
 <p align="center">
-  <img src="/building-an-ai-code-review-evaluation-platform/eval-fixtures.png" alt="eval fixtures" width="800">
+  <img src="/making-ai-code-review-measurable/eval-fixtures.png" alt="eval fixtures" width="800">
 </p>
 
 
@@ -130,7 +132,7 @@ I cannot stress enough how valuable this step is. With evals, I can measure whet
 Notice the `tags` in the mock review table. The idea is that every team and domain is different. A booking-related pull request may need a different prompt, checklist, or priority from a payment-related pull request. With tags, I can run targeted evals for specific areas and tune the reviewer accordingly.
 
 <p align="center">
-  <img src="/building-an-ai-code-review-evaluation-platform/eval-runs.png" alt="eval runs" width="800">
+  <img src="/making-ai-code-review-measurable/eval-runs.png" alt="eval runs" width="800">
 </p>
 
 ## Eval automation
@@ -153,7 +155,7 @@ Once the mock review system had been set up, it became much easier to compare di
 This made the system less about one specific agent and more about a repeatable evaluation workflow. It also made it dangerously easy to burn through billions of tokens in a short period of time.
 
 <p align="center">
-  <img src="/building-an-ai-code-review-evaluation-platform/eval-harness.png" alt="eval harness" width="800">
+  <img src="/making-ai-code-review-measurable/eval-harness.png" alt="eval harness" width="800">
 </p>
 
 ## Cost
@@ -171,7 +173,7 @@ One reason `pi` is interesting is that it is highly customisable and less bloate
 For example, if one harness is 30% cheaper but still stays within an acceptable accuracy range, it might be worth pursuing. Cost must be measured together with review quality.
 
 <p align="center">
-  <img src="/building-an-ai-code-review-evaluation-platform/review-cost.png" alt="review cost" width="800">
+  <img src="/making-ai-code-review-measurable/review-cost.png" alt="review cost" width="800">
 </p>
 
 ## Beyond automation
@@ -187,7 +189,7 @@ To me, even if I never fully trust the system to auto-approve pull requests, thi
 Another way I think about it is as a first pass before asking another person to review the pull request. If it can catch obvious issues or highlight risky areas early, the human reviewer can spend more time on the parts that actually need judgement.
 
 <p align="center">
-  <img src="/building-an-ai-code-review-evaluation-platform/bot-qa.png" alt="bot Q&A" width="800">
+  <img src="/making-ai-code-review-measurable/bot-qa.png" alt="bot Q&A" width="800">
 </p>
 
 ### Risks and limitations
