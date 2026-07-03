@@ -3,7 +3,7 @@ title: "Upgrading Fave to Rails 5.0"
 date: 2022-06-06T11:30:03+00:00
 # weight: 1
 tags: ["rails", "fave"]
-author: "Me"
+author: "Azuan"
 showToc: false
 TocOpen: false
 draft: false

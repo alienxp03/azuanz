@@ -2,7 +2,7 @@
 title: "Building an AI Code Review Evaluation Platform"
 date: 2026-07-02T00:00:00+08:00
 tags: ["ai", "code review", "engineering"]
-author: "Me"
+author: "Azuan"
 draft: true
 ---
 
@@ -54,7 +54,10 @@ Example output:
 
 With this approach, Codex can inspect relevant files and gather context before performing the review. Because the output is structured, I can also build a simple web interface around the system.
 
-[image 1]
+<p align="center">
+  <img src="/building-an-ai-code-review-evaluation-platform/codex-usage.png" alt="codex-usage" width="800">
+</p>
+
 
 ## Mock review
 
@@ -82,7 +85,11 @@ Some examples:
   - This pull request was originally approved, but it accidentally caused an incident.
   - In the mock review, I want this PR to be rejected. Thanks to my team lead, who asked about this scenario.
 
-[code-review-image-2]
+<p align="center">
+  <img src="/building-an-ai-code-review-evaluation-platform/eval-fixtures.png" alt="eval fixtures" width="800">
+</p>
+
+
 
 ## Comparing evals
 
@@ -122,9 +129,13 @@ I cannot stress enough how valuable this step is. With evals, I can measure whet
 
 Notice the `tags` in the mock review table. The idea is that every team and domain is different. A booking-related pull request may need a different prompt, checklist, or priority from a payment-related pull request. With tags, I can run targeted evals for specific areas and tune the reviewer accordingly.
 
-[code-review-image-3]
+<p align="center">
+  <img src="/building-an-ai-code-review-evaluation-platform/eval-runs.png" alt="eval runs" width="800">
+</p>
 
-## Comparing evals: harnesses and models
+## Eval automation
+
+What is the right prompt? Ideally, I don't want to search for the best prompt myself. So instead, the system will be able to reiterate itself and improve it's own code review prompt. It is far from perfect, but some prompt managed to get 88% accuracy, up from 50% initial start.
 
 If you use coding agents long enough, you will realise that the harness matters too, not just the model or reasoning level.
 
@@ -141,11 +152,9 @@ Once the mock review system has been setup, it became much easier to compare dif
 
 This made the system less about one specific agent and more about a repeatable evaluation workflow.
 
-[code-review-image-4]
-
-## Eval automation
-
-What is the right prompt? Ideally, I don't want to search for the best prompt myself. So instead, the system will be able to reiterate itself and improve it's own code review prompt. It is far from perfect, but some prompt managed to get 88% accuracy, up from 50% initial start.
+<p align="center">
+  <img src="/building-an-ai-code-review-evaluation-platform/eval-harness.png" alt="eval harness" width="800">
+</p>
 
 ## Cost
 
@@ -161,7 +170,9 @@ One reason `pi` is interesting is that it is highly customisable and less bloate
 
 For example, if one harness is 30% cheaper but still stays within an acceptable accuracy range, it might be worth pursuing. Cost must be measured together with review quality.
 
-[code-review-image-5]
+<p align="center">
+  <img src="/building-an-ai-code-review-evaluation-platform/review-cost.png" alt="review cost" width="800">
+</p>
 
 # Beyond automation
 
@@ -173,7 +184,9 @@ I could pair with the pull request author, but sometimes I just have a few quick
 
 To me, even if I never fully trust the system to auto-approve pull requests, this is still useful tools. It can act as a review companion to summarize risky areas, explaining unfamiliar code, and helping reviewers ask better questions.
 
-[code-review-image-6]
+<p align="center">
+  <img src="/building-an-ai-code-review-evaluation-platform/bot-qa.png" alt="bot Q&A" width="800">
+</p>
 
 ## Risks and limitations
 
@@ -181,10 +194,7 @@ There are still plenty of risks here, which I won't talk about. Mainly because t
 
 # Final thoughts
 
-This started as a part-time project and was fully vibe coded. Even so, I was quite impressed with the result.
+This started as a part-time project and was fully vibe coded. Using Codex CLI, gpt-5.5 medium. Even so, I was quite impressed with the result.
 
 I am still building it, and I run it locally when I need to. Partly, that is because our three-month trial has ended and we now have to start paying for usage. Although, I do not think that is a bad thing. The trial gave me a chance to build a few useful tools, and this code review platform is one of them.
 
-## Tools
-
-- Built the system using Codex, Gpt-5.5 Medium reasoning
