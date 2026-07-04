@@ -4,4 +4,6 @@ author: "Me"
 hidemeta: true
 ---
 
-You can contact me at azuanrb@gmail.com
+Email: [azuanrb@gmail.com](mailto:azuanrb@gmail.com)
+
+LinkedIn: [linkedin.com/in/azuanzira](https://www.linkedin.com/in/azuanzira/)
