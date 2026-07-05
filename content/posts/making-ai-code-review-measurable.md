@@ -193,6 +193,12 @@ Another way I think about it is as a first pass before asking another person to 
   <img src="/making-ai-code-review-measurable/bot-qa.png" alt="bot Q&A" width="800">
 </p>
 
+### This could have been a SKILL
+
+It definitely could. If we remove all the fancy UI, the core of this system is just a prompt, a few rules, and a structured output format. In that form, it could work as a SKILL.
+
+The JSON structure is one of the important parts. It gives both the reviewer and the AI agent a clearer shape for the code review process.
+
 ### Risks and limitations
 
 There are still plenty of risks here.
