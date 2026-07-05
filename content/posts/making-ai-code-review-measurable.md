@@ -18,7 +18,9 @@ Then I read a [thread by Intercom](https://x.com/gregolsent/status/2039788736569
 
 ## 1. Why build this myself?
 
-There are already a lot of code review tools out there. I'm sure some of them are great, and some maybe better than what I built. But I wanted something that could run inside my existing workflow and use my existing ChatGPT Codex subscription, whether personal or enterprise. I really, really did not want another subscription.
+There are already a lot of code review tools out there. I'm sure some of them are great, and some may even be better than what I built. But I have always had a love and hate relationship with code review tools, even before AI. They are often hit or miss. And when the cost is high, it is hard for me to recommend a tool broadly without first understanding how useful it actually is.
+
+I also wanted something that could run locally inside my existing workflow and use my existing ChatGPT Codex subscription, whether personal or enterprise. I really, really did not want to pay another subscription.
 
 ## 2. Coding agent
 
@@ -60,7 +62,6 @@ With this approach, Codex can inspect relevant files and gather context before p
   <img src="/making-ai-code-review-measurable/codex-usage.png" alt="codex-usage" width="800">
 </p>
 
-
 ## Mock review
 
 The next step was to answer a question. How can I test the code review system quickly?
@@ -87,11 +88,11 @@ Some examples:
   - This pull request was originally approved, but it accidentally caused an incident.
   - In the mock review, I want this PR to be rejected. Thanks to my team lead, who asked about this scenario.
 
+This is also where feedback from my colleagues helped a lot. They pointed out scenarios that I had missed, especially around the kind of issues that should block a pull request versus comments that are merely nice to have. That made the fixture list more useful, and made the evaluation better reflect real review expectations from the team.
+
 <p align="center">
   <img src="/making-ai-code-review-measurable/eval-fixtures.png" alt="eval fixtures" width="800">
 </p>
-
-
 
 ## Comparing evals
 
@@ -204,11 +205,10 @@ So I do not see this as a replacement for human reviewers. Not blindly, at least
 
 ## Final thoughts
 
-This started as a part-time project and was built mostly through vibe coding using Codex CLI with gpt-5.5 medium and I was quite impressed with the result.
+This started as a side project and was built mostly through vibe coding using Codex CLI with gpt-5.5 medium and I was quite impressed with the result.
 
 The biggest takeaway for me is that AI code review only becomes interesting once it is measurable. A single impressive review does not mean much. But if I can run the same reviewer against historical pull requests, compare prompts, measure cost, and understand where it fails, then it becomes something I can improve.
 
 For me, the important question is not whether AI can review code, but whether we can make that review process observable, repeatable, and safe enough to fit into an engineering workflow.
 
 I am not trying to replace human reviewers. I am trying to build a better review workflow. One where AI can take the first pass, surface useful context, and make the human review more focused.
-
