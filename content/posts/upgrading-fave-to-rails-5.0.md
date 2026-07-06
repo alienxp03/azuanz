@@ -1,29 +1,11 @@
 ---
 title: "Upgrading Fave to Rails 5.0"
 date: 2022-06-06T11:30:03+00:00
-# weight: 1
 tags: ["rails", "fave"]
 author: "Azuan"
-showToc: false
-TocOpen: false
 draft: false
-hidemeta: false
-comments: false
 description: "Upgrading Fave to Rails 5.0"
-# canonicalURL: "https://canonical.url/to/page"
-disableShare: false
-disableHLJS: false
-hideSummary: false
 searchHidden: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
-cover:
-    image: "<image path/url>" # image path/url
-    alt: "<alt text>" # alt text
-    caption: "<text>" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
 ---
 
 In [Fave](https://myfave.com), we are still largely powered by our majestic monolith Ruby on Rails app. On 3rd November 2021, we finally reached a big milestone and upgraded our app from 4.2 to 5.0!

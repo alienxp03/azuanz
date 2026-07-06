@@ -3,7 +3,8 @@ title: "Making AI Code Review Measurable"
 date: 2026-07-02T00:00:00+08:00
 tags: ["ai", "code review", "engineering"]
 author: "Azuan"
-draft: true
+draft: false
+description: "How I built a repeatable evaluation workflow for AI code review using historical pull requests, coding agents, and cost tracking."
 ---
 
 Code review has always been one of the bottlenecks for software engineers. At [loveholidays](https://www.loveholidays.com/), we have been using a lot of AI in our daily workflows. Whether a PR is written with the help of AI or not, someone still needs to review it.
